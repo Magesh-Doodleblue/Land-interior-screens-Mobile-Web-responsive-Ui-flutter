@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:web_mobile_responsive_app/pages/about/about.dart';
+import 'package:web_mobile_responsive_app/pages/blog/blog.dart';
+import 'package:web_mobile_responsive_app/pages/project/project.dart';
 
+import '../../constants/style.dart';
 import 'mobile.dart';
 import 'web.dart';
 
@@ -15,12 +19,53 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   static var mediaWidth;
   static var mediaHeight;
+  bool about = false;
+  bool project = false;
+  bool blog = false;
+  bool studio = false;
+  bool contact = false;
+  late bool home;
+
+  @override
+  void initState() {
+    super.initState();
+    home = true;
+  }
 
   @override
   Widget build(BuildContext context) {
     //
     mediaWidth = MediaQuery.of(context).size.width;
     mediaHeight = MediaQuery.of(context).size.height;
+    Row topRowWeb() {
+      return Row(
+        children: [
+          const Spacer(
+            flex: 1,
+          ),
+          Image.asset(
+            "assets/logo.png",
+          ),
+          const Spacer(flex: 8),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Join as Design Expert",
+              style: subheadlineStyle,
+            ),
+          ),
+          const Spacer(flex: 1),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Partner with LAND interiors",
+              style: subheadlineStyle,
+            ),
+          ),
+          const Spacer(flex: 1),
+        ],
+      );
+    }
 
     return Scaffold(
       body: Column(
@@ -28,18 +73,148 @@ class _HomepageState extends State<Homepage> {
           const SizedBox(
             height: 30,
           ),
-          if (mediaWidth > 750)
-            Expanded(
-              child: HomepageWebBody(
-                  mediaWidth: mediaWidth, mediaHeight: mediaHeight),
-            ),
-          if (mediaWidth < 750)
-            Expanded(
-              child: HomepageMobileBody(
-                  mediaWidth: mediaWidth, mediaHeight: mediaHeight),
-            ),
+          mediaWidth > 750 ? topRowWeb() : Container(),
+          mediaWidth > 750 ? appbarIconWidget() : Container(),
+          const SizedBox(
+            height: 30,
+          ),
+          home
+              ? (mediaWidth > 750)
+                  ? Expanded(
+                      child: HomepageWebBody(
+                          mediaWidth: mediaWidth, mediaHeight: mediaHeight),
+                    )
+                  : Expanded(
+                      child: HomepageMobileBody(
+                          mediaWidth: mediaWidth, mediaHeight: mediaHeight),
+                    )
+              : Container(),
+          about
+              ? const Expanded(
+                  child: About(),
+                )
+              : Container(),
+          project
+              ? const Expanded(
+                  child: Project(),
+                )
+              : Container(),
+
+          blog
+              ? const Expanded(
+                  child: BlogPage(),
+                )
+              : Container(),
+          // if (studio) const Expanded(child: Studio()),
         ],
       ),
+    );
+  }
+
+  Row appbarIconWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        TextButton(
+          onPressed: () {
+            //Go router
+            // GoRouter.of(context).pushNamed("about");
+            setState(() {
+              about = true;
+              project = false;
+              blog = false;
+              home = false;
+
+              studio = false;
+              contact = false;
+            });
+          },
+          child: Text(
+            "About",
+            style: appbarHeadlineStyle,
+          ),
+        ),
+        const SizedBox(
+          width: 30,
+        ),
+        TextButton(
+          onPressed: () {
+            // GoRouter.of(context).pushNamed("project");
+            setState(() {
+              about = false;
+              project = true;
+              blog = false;
+              home = false;
+
+              contact = false;
+              studio = false;
+            });
+          },
+          child: Text(
+            "Project",
+            style: appbarHeadlineStyle,
+          ),
+        ),
+        const SizedBox(
+          width: 30,
+        ),
+        TextButton(
+          onPressed: () {
+            // GoRouter.of(context).pushReplacement("/studio");
+            setState(() {
+              about = false;
+              project = false;
+              home = false;
+              blog = false;
+              studio = true;
+              contact = false;
+            });
+          },
+          child: Text(
+            "Studio",
+            style: appbarHeadlineStyle,
+          ),
+        ),
+        const SizedBox(
+          width: 30,
+        ),
+        TextButton(
+          onPressed: () {
+            setState(() {
+              // GoRouter.of(context).pushReplacement("/blog");
+              about = false;
+              project = false;
+              blog = true;
+              home = false;
+
+              studio = false;
+              contact = false;
+            });
+          },
+          child: Text(
+            "Blog",
+            style: appbarHeadlineStyle,
+          ),
+        ),
+        const SizedBox(
+          width: 30,
+        ),
+        TextButton(
+          onPressed: () {
+            // GoRouter.of(context).pushReplacement("/contact");
+            about = false;
+            home = false;
+            project = false;
+            blog = false;
+            studio = false;
+            contact = true;
+          },
+          child: Text(
+            "Contact",
+            style: appbarHeadlineStyle,
+          ),
+        ),
+      ],
     );
   }
 }

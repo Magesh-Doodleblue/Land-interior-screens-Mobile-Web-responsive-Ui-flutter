@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../constants/style.dart';
 
@@ -18,110 +17,80 @@ class HomepageWebBody extends StatefulWidget {
 }
 
 class _HomepageWebBodyState extends State<HomepageWebBody> {
-  Row topRowWeb() {
-    return Row(
-      children: [
-        const Spacer(
-          flex: 1,
-        ),
-        Image.asset(
-          "assets/logo.png",
-        ),
-        const Spacer(flex: 8),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            "Join as Design Expert",
-            style: subheadlineStyle,
-          ),
-        ),
-        const Spacer(flex: 1),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            "Partner with LAND interiors",
-            style: subheadlineStyle,
-          ),
-        ),
-        const Spacer(flex: 1),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListView(
       //main page Listview
       children: [
-        topRowWeb(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(
-              onPressed: () {
-                //Go router
-                GoRouter.of(context).pushNamed("about");
-              },
-              child: Text(
-                "About",
-                style: appbarHeadlineStyle,
-              ),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushNamed("project");
-              },
-              child: Text(
-                "Project",
-                style: appbarHeadlineStyle,
-              ),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushReplacement("/studio");
-              },
-              child: Text(
-                "Studio",
-                style: appbarHeadlineStyle,
-              ),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  GoRouter.of(context).pushReplacement("/blog");
-                });
-              },
-              child: Text(
-                "Blog",
-                style: appbarHeadlineStyle,
-              ),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            TextButton(
-              onPressed: () {
-                GoRouter.of(context).pushReplacement("/contact");
-              },
-              child: Text(
-                "Contact",
-                style: appbarHeadlineStyle,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 20,
-        ),
+        // topRowWeb(),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     TextButton(
+        //       onPressed: () {
+        //         //Go router
+        //         GoRouter.of(context).pushNamed("about");
+        //       },
+        //       child: Text(
+        //         "About",
+        //         style: appbarHeadlineStyle,
+        //       ),
+        //     ),
+        //     const SizedBox(
+        //       width: 30,
+        //     ),
+        //     TextButton(
+        //       onPressed: () {
+        //         GoRouter.of(context).pushNamed("project");
+        //       },
+        //       child: Text(
+        //         "Project",
+        //         style: appbarHeadlineStyle,
+        //       ),
+        //     ),
+        //     const SizedBox(
+        //       width: 30,
+        //     ),
+        //     TextButton(
+        //       onPressed: () {
+        //         GoRouter.of(context).pushReplacement("/studio");
+        //       },
+        //       child: Text(
+        //         "Studio",
+        //         style: appbarHeadlineStyle,
+        //       ),
+        //     ),
+        //     const SizedBox(
+        //       width: 30,
+        //     ),
+        //     TextButton(
+        //       onPressed: () {
+        //         setState(() {
+        //           GoRouter.of(context).pushReplacement("/blog");
+        //         });
+        //       },
+        //       child: Text(
+        //         "Blog",
+        //         style: appbarHeadlineStyle,
+        //       ),
+        //     ),
+        //     const SizedBox(
+        //       width: 30,
+        //     ),
+        //     TextButton(
+        //       onPressed: () {
+        //         GoRouter.of(context).pushReplacement("/contact");
+        //       },
+        //       child: Text(
+        //         "Contact",
+        //         style: appbarHeadlineStyle,
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        // const SizedBox(
+        //   height: 20,
+        // ),
         Row(
           //third child of Listview
           children: [
