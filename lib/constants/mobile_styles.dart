@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 TextStyle mobileHeading = const TextStyle(
   color: Color.fromARGB(255, 14, 0, 93),
-  fontSize: 18,
+  fontSize: 22,
 );
 
 TextStyle mainMobileHeading = const TextStyle(

@@ -21,7 +21,7 @@ class aboutMobileLayout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 50,
+            height: 20,
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -35,94 +35,124 @@ class aboutMobileLayout extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           const Text(
             textAlign: TextAlign.center,
-            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet \nluctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
+            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
             style: TextStyle(
-              fontSize: 10,
+              fontSize: 14,
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
-          Stack(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/mobile_about.png",
-                width: mediaWidth * 0.80,
-                height: mediaHeight / 1.4,
+                "assets/left.png",
+                width: 10,
               ),
-              Positioned(
-                left: mediaWidth * 0.04,
-                top: 130,
-                child: SizedBox(
-                  width: mediaWidth / 1.75,
-                  child: Card(
-                    color: Colors.white.withOpacity(0.99),
-                    elevation: 30,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        SizedBox(
-                          height: 60,
-                        ),
-                        Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit ut aliquam, purus sit amet luctus venenatis, lectus\nmagna fringilla urna, porttitor",
-                          style: TextStyle(fontSize: 10),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Text(
-                          "-Jeo Stanlee",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              const SizedBox(
+                width: 5,
               ),
-              Positioned(
-                // top: mediaHeight * 0.14,
-                left: 100,
-                child: Image.asset(
-                  "assets/person.png",
-                  width: mediaWidth / 3.1,
-                  // height: 78,
-                ),
+              Image.asset(
+                "assets/aboutmobile.png",
+                width: mediaWidth * 0.7,
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Image.asset(
+                "assets/right.png",
+                width: 10,
               ),
             ],
           ),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.only(left: 78.0),
-              child: Text(
-                // textAlign: TextAlign.left,
-                "Let talk about your Dream home",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-              ),
-            ),
+          // Stack(
+          //   children: [
+          //     Image.asset(
+          //       "assets/mobile_about.png",
+          //       width: mediaWidth * 0.80,
+          //       height: mediaHeight / 1.4,
+          //     ),
+          //     Positioned(
+          //       left: mediaWidth * 0.04,
+          //       top: 130,
+          //       child: SizedBox(
+          //         width: mediaWidth / 1.75,
+          //         child: Card(
+          //           color: Colors.white.withOpacity(0.99),
+          //           elevation: 30,
+          //           child: Column(
+          //             mainAxisAlignment: MainAxisAlignment.center,
+          //             children: const [
+          //               SizedBox(
+          //                 height: 60,
+          //               ),
+          //               Text(
+          //                 "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit ut aliquam, purus sit amet luctus venenatis, lectus\nmagna fringilla urna, porttitor",
+          //                 style: TextStyle(fontSize: 10),
+          //               ),
+          //               SizedBox(
+          //                 height: 30,
+          //               ),
+          //               Text(
+          //                 "-Jeo Stanlee",
+          //                 style: TextStyle(
+          //                   color: Colors.black,
+          //                   fontSize: 18,
+          //                   fontWeight: FontWeight.w600,
+          //                 ),
+          //               ),
+          //               SizedBox(
+          //                 height: 30,
+          //               ),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //     Positioned(
+          //       // top: mediaHeight * 0.14,
+          //       left: 100,
+          //       child: Image.asset(
+          //         "assets/person.png",
+          //         width: mediaWidth / 3.1,
+          //         // height: 78,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          const SizedBox(
+            height: 20,
           ),
+          // const Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Padding(
+          //     padding: EdgeInsets.only(left: 78.0),
+          //     child:
+          //   ),
+          // ),
           const SizedBox(
             height: 30,
           ),
           Center(
             child: Column(
               children: [
+                const Text(
+                  textAlign: TextAlign.left,
+                  "Let talk about your Dream home",
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Color.fromARGB(255, 14, 0, 93),
+                      fontWeight: FontWeight.w600),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    width: mediaWidth * 0.75,
+                    width: mediaWidth * 0.85,
                     child: const TextField(
                       decoration: InputDecoration(
                         hintText: "Name",
@@ -138,7 +168,7 @@ class aboutMobileLayout extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    width: mediaWidth * 0.75,
+                    width: mediaWidth * 0.85,
                     child: const TextField(
                       decoration: InputDecoration(
                         hintText: "Phone / Email",

@@ -29,76 +29,84 @@ class aboutWebLayout extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          const Text(
-            textAlign: TextAlign.center,
-            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet \nluctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            child: Text(
+              textAlign: TextAlign.center,
+              "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
+            ),
           ),
           const SizedBox(
             height: 40,
           ),
-          SizedBox(
-            // color: Colors.amber,
-            height: mediaHeight / 1.61,
-            child: Stack(
-              children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Image.asset(
-                          "assets/aboutbg.png",
-                          width: mediaWidth * 0.80,
-                          height: mediaHeight / 2,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Positioned(
-                  left: mediaWidth * 0.340,
-                  top: 210,
-                  child: SizedBox(
-                    width: mediaWidth * 0.34,
-                    // color: Colors.black,
-                    // color: Colors.white.withOpacity(0.9),
-                    child: Card(
-                      color: Colors.white.withOpacity(0.99),
-                      elevation: 30,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 60,
-                          ),
-                          const Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit ut aliquam, purus sit amet luctus venenatis, lectus\nmagna fringilla urna, porttitor",
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Text(
-                            "-Jeo Stanlee",
-                            style: nameFontStyle,
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: mediaHeight * 0.14,
-                  left: mediaWidth * 0.462,
-                  child: Image.asset(
-                    "assets/person.png",
-                  ),
-                ),
-              ],
-            ),
+          Image.asset(
+            "assets/aboutweb.png",
+            width: mediaWidth * 0.78,
           ),
+          // SizedBox(
+          //   // color: Colors.amber,
+          //   height: mediaHeight / 1.61,
+          //   child: Stack(
+          //     children: [
+          //       SingleChildScrollView(
+          //         child: Column(
+          //           children: [
+          //             Align(
+          //               alignment: Alignment.topCenter,
+          //               child: Image.asset(
+          //                 "assets/aboutbg.png",
+          //                 width: mediaWidth * 0.80,
+          //                 height: mediaHeight / 2,
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //       Positioned(
+          //         left: mediaWidth * 0.340,
+          //         top: 210,
+          //         child: SizedBox(
+          //           width: mediaWidth * 0.34,
+          //           // color: Colors.black,
+          //           // color: Colors.white.withOpacity(0.9),
+          //           child: Card(
+          //             color: Colors.white.withOpacity(0.99),
+          //             elevation: 30,
+          //             child: Column(
+          //               mainAxisAlignment: MainAxisAlignment.center,
+          //               children: [
+          //                 const SizedBox(
+          //                   height: 60,
+          //                 ),
+          //                 const Text(
+          //                   "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit ut aliquam, purus sit amet luctus venenatis, lectus\nmagna fringilla urna, porttitor",
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 30,
+          //                 ),
+          //                 Text(
+          //                   "-Jeo Stanlee",
+          //                   style: nameFontStyle,
+          //                 ),
+          //                 const SizedBox(
+          //                   height: 30,
+          //                 ),
+          //               ],
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //       Positioned(
+          //         top: mediaHeight * 0.14,
+          //         left: mediaWidth * 0.462,
+          //         child: Image.asset(
+          //           "assets/person.png",
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
