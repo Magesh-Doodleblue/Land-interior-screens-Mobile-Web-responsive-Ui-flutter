@@ -1,13 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
 import 'package:flutter/material.dart';
 
 import '../../constants/style.dart';
 
 class aboutWebLayout extends StatelessWidget {
   const aboutWebLayout({
-    super.key,
+    Key? key,
     required this.mediaHeight,
     required this.mediaWidth,
-  });
+  }) : super(key: key);
 
   final double mediaHeight;
   final double mediaWidth;
@@ -19,7 +20,7 @@ class aboutWebLayout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 50,
+            height: 20,
           ),
           Text(
             textAlign: TextAlign.center,
@@ -27,18 +28,18 @@ class aboutWebLayout extends StatelessWidget {
             style: sideHeadlineStyle,
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 18.0),
             child: Text(
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
               "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
             ),
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          // const SizedBox(
+          //   height: 40,
+          // ),
           Image.asset(
             "assets/aboutweb.png",
             width: mediaWidth * 0.78,
@@ -110,7 +111,7 @@ class aboutWebLayout extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 78.0),
+              padding: const EdgeInsets.only(left: 48.0),
               child: Text(
                 // textAlign: TextAlign.left,
                 "Let talk about your Dream home",
@@ -194,20 +195,20 @@ class aboutWebLayout extends StatelessWidget {
                   child: Image.asset("logo.png"),
                 ),
                 const Spacer(flex: 4),
-                Text(
-                  "WHAT WE DO",
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.90),
-                  ),
-                ),
-                const Spacer(flex: 2),
-                Text(
-                  "Get in touch",
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.90),
-                  ),
-                ),
-                const Spacer(flex: 2),
+                // Text(
+                //   "WHAT WE DO",
+                //   style: TextStyle(
+                //     color: Colors.black.withOpacity(0.90),
+                //   ),
+                // ),
+                // const Spacer(flex: 2),
+                // Text(
+                //   "Get in touch",
+                //   style: TextStyle(
+                //     color: Colors.black.withOpacity(0.90),
+                //   ),
+                // ),
+                // const Spacer(flex: 2),
               ],
             ),
           ),
@@ -230,6 +231,9 @@ class aboutWebLayout extends StatelessWidget {
               ),
               Spacer(flex: 5),
             ],
+          ),
+          const SizedBox(
+            height: 50,
           ),
         ],
       ),

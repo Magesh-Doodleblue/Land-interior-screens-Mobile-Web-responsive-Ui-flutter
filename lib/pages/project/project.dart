@@ -46,10 +46,25 @@ class Project extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              textAlign: TextAlign.center,
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla",
-              style: mediaWidth > 740 ? normalTextStyle : normalTextStyleMobile,
+            child: Center(
+              child: Column(
+                children: [
+                  Text(
+                    textAlign: TextAlign.justify,
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna\nfringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper",
+                    style: mediaWidth > 740
+                        ? normalTextStyle
+                        : normalTextStyleMobile,
+                  ),
+                  Text(
+                    textAlign: TextAlign.justify,
+                    "eget nulla",
+                    style: mediaWidth > 740
+                        ? normalTextStyle
+                        : normalTextStyleMobile,
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(

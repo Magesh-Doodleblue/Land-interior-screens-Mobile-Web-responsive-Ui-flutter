@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:web_mobile_responsive_app/pages/about/about.dart';
 import 'package:web_mobile_responsive_app/pages/blog/blog.dart';
 import 'package:web_mobile_responsive_app/pages/project/project.dart';
 
 import '../../constants/style.dart';
+import '../about/about.dart';
 import 'mobile.dart';
 import 'web.dart';
 
@@ -19,7 +19,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   static var mediaWidth;
   static var mediaHeight;
-  bool about = false;
+
   bool project = false;
   bool blog = false;
   bool studio = false;
@@ -43,8 +43,20 @@ class _HomepageState extends State<Homepage> {
           const Spacer(
             flex: 1,
           ),
-          Image.asset(
-            "assets/logo.png",
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                project = false;
+                blog = false;
+                home = true;
+
+                studio = false;
+                contact = false;
+              });
+            },
+            child: Image.asset(
+              "assets/logo.png",
+            ),
           ),
           const Spacer(flex: 8),
           TextButton(
@@ -89,7 +101,7 @@ class _HomepageState extends State<Homepage> {
                           mediaWidth: mediaWidth, mediaHeight: mediaHeight),
                     )
               : Container(),
-          about
+          contact
               ? const Expanded(
                   child: About(),
                 )
@@ -120,11 +132,9 @@ class _HomepageState extends State<Homepage> {
             //Go router
             // GoRouter.of(context).pushNamed("about");
             setState(() {
-              about = true;
               project = false;
               blog = false;
-              home = false;
-
+              home = true;
               studio = false;
               contact = false;
             });
@@ -141,11 +151,9 @@ class _HomepageState extends State<Homepage> {
           onPressed: () {
             // GoRouter.of(context).pushNamed("project");
             setState(() {
-              about = false;
               project = true;
               blog = false;
               home = false;
-
               contact = false;
               studio = false;
             });
@@ -162,7 +170,6 @@ class _HomepageState extends State<Homepage> {
           onPressed: () {
             // GoRouter.of(context).pushReplacement("/studio");
             setState(() {
-              about = false;
               project = false;
               home = false;
               blog = false;
@@ -182,11 +189,9 @@ class _HomepageState extends State<Homepage> {
           onPressed: () {
             setState(() {
               // GoRouter.of(context).pushReplacement("/blog");
-              about = false;
               project = false;
               blog = true;
               home = false;
-
               studio = false;
               contact = false;
             });
@@ -201,13 +206,14 @@ class _HomepageState extends State<Homepage> {
         ),
         TextButton(
           onPressed: () {
-            // GoRouter.of(context).pushReplacement("/contact");
-            about = false;
-            home = false;
-            project = false;
-            blog = false;
-            studio = false;
-            contact = true;
+            setState(() {
+              // GoRouter.of(context).pushReplacement("/blog");
+              project = false;
+              blog = false;
+              home = false;
+              studio = false;
+              contact = true;
+            });
           },
           child: Text(
             "Contact",

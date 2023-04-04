@@ -23,8 +23,14 @@ class whatWeDoWebWidget extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    "https://th.bing.com/th/id/R.6a78dcc33857f08821fd5af531b9b136?rik=sVwxIEdqvojLKQ&riu=http%3a%2f%2fwww.decorationlove.com%2fwp-content%2fuploads%2f2016%2f09%2fModern-Kitchen-Cabinet-Design.jpg&ehk=qOuuB619iqsM5nUf1YCwnGCHw2%2bAfDUxKZcVXcVkEgI%3d&risl=&pid=ImgRaw&r=0",
+                  // child: Image.network(
+                  //   "https://th.bing.com/th/id/R.6a78dcc33857f08821fd5af531b9b136?rik=sVwxIEdqvojLKQ&riu=http%3a%2f%2fwww.decorationlove.com%2fwp-content%2fuploads%2f2016%2f09%2fModern-Kitchen-Cabinet-Design.jpg&ehk=qOuuB619iqsM5nUf1YCwnGCHw2%2bAfDUxKZcVXcVkEgI%3d&risl=&pid=ImgRaw&r=0",
+                  //   fit: BoxFit.cover,
+                  //   width: 300,
+                  //   height: 300,
+                  // ),
+                  child: Image.asset(
+                    "assets/kitchen.png",
                     fit: BoxFit.cover,
                     width: 300,
                     height: 300,
@@ -35,7 +41,7 @@ class whatWeDoWebWidget extends StatelessWidget {
                 ),
                 Text(
                   "Modular Kitchen",
-                  style: subheadlineStyle,
+                  style: subheadlineProjectStyle,
                 ),
               ],
             ),
@@ -46,8 +52,14 @@ class whatWeDoWebWidget extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    "https://i0.wp.com/magzhouse.com/wp-content/uploads/2019/09/Incredible-Modern-Bedroom-Design-Ideas-19.jpg?ssl=1",
+                  // child: Image.network(
+                  //   "https://i0.wp.com/magzhouse.com/wp-content/uploads/2019/09/Incredible-Modern-Bedroom-Design-Ideas-19.jpg?ssl=1",
+                  // fit: BoxFit.cover,
+                  // width: 300,
+                  // height: 300,
+                  // ),
+                  child: Image.asset(
+                    "assets/bed.png",
                     fit: BoxFit.cover,
                     width: 300,
                     height: 300,
@@ -57,8 +69,8 @@ class whatWeDoWebWidget extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Modular Kitchen",
-                  style: subheadlineStyle,
+                  "Bedroom",
+                  style: subheadlineProjectStyle,
                 ),
               ],
             ),
@@ -80,8 +92,8 @@ class whatWeDoWebWidget extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Modular Kitchen",
-                  style: subheadlineStyle,
+                  "Living Room",
+                  style: subheadlineProjectStyle,
                 ),
               ],
             ),
@@ -92,8 +104,14 @@ class whatWeDoWebWidget extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    "https://i0.wp.com/homyhomee.com/wp-content/uploads/2020/02/Gorgeous-Modern-Office-Interior-Design-Ideas-You-Never-Seen-Before-17.jpg?fit=1024%2C1280&ssl=1",
+                  // child: Image.network(
+                  //   "https://i0.wp.com/homyhomee.com/wp-content/uploads/2020/02/Gorgeous-Modern-Office-Interior-Design-Ideas-You-Never-Seen-Before-17.jpg?fit=1024%2C1280&ssl=1",
+                  //   fit: BoxFit.cover,
+                  //   width: 300,
+                  //   height: 300,
+                  // ),
+                  child: Image.asset(
+                    "assets/office.png",
                     fit: BoxFit.cover,
                     width: 300,
                     height: 300,
@@ -103,8 +121,8 @@ class whatWeDoWebWidget extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Modular Kitchen",
-                  style: subheadlineStyle,
+                  "Home office",
+                  style: subheadlineProjectStyle,
                 ),
               ],
             ),
@@ -126,111 +144,144 @@ class webOurProjectsLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Row(
+      child: Column(
         children: [
-          Stack(
+          Row(
             children: [
-              Wrap(
+              Stack(
                 children: [
-                  Column(
+                  Positioned(
+                    child: Image.asset(
+                      "assets/blue.png",
+                      width: mediaWidth,
+                      height: 700,
+                    ),
+                  ),
+                  Wrap(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.network(
-                          "https://th.bing.com/th/id/R.1fec30866582beb4ef0134d6c87ee72b?rik=mErT6%2b1fdzrSZA&riu=http%3a%2f%2fcdn.decoist.com%2fwp-content%2fuploads%2f2016%2f10%2fStunning-live-edge-office-desk-for-the-exceptional-contemporary-home-office.jpg&ehk=miB023LjShqZeZdidX4noZgRYs37adw9Yb86JTaI%2fJI%3d&risl=&pid=ImgRaw&r=0",
-                          width: mediaWidth / 4,
-                          fit: BoxFit.cover,
-                          height: 270,
-                        ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                right: 8.0, top: 8, bottom: 8, left: 45),
+                            child: Image.network(
+                              "https://th.bing.com/th/id/R.1fec30866582beb4ef0134d6c87ee72b?rik=mErT6%2b1fdzrSZA&riu=http%3a%2f%2fcdn.decoist.com%2fwp-content%2fuploads%2f2016%2f10%2fStunning-live-edge-office-desk-for-the-exceptional-contemporary-home-office.jpg&ehk=miB023LjShqZeZdidX4noZgRYs37adw9Yb86JTaI%2fJI%3d&risl=&pid=ImgRaw&r=0",
+                              width: mediaWidth / 4.2,
+                              fit: BoxFit.cover,
+                              height: 270,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                right: 8.0, top: 8, bottom: 8, left: 45),
+                            child: Image.network(
+                              "https://th.bing.com/th/id/R.8fc1d426aaaa5b6cd29b4857e9ff174c?rik=zAoChWxweP5B6Q&riu=http%3a%2f%2f1.bp.blogspot.com%2f--JijrjuTuQE%2fTh89y--UXHI%2fAAAAAAAAAjc%2fCVBzGgP1Dww%2fs1600%2fModern%2bOffice%2bInterior%2bDesign.jpg&ehk=Fn1BpWbg6%2bfFBg2tNTKy7o31SVKYhCqnfKKZ%2fdahSew%3d&risl=&pid=ImgRaw&r=0",
+                              width: mediaWidth / 4.2,
+                              fit: BoxFit.cover,
+                              height: 270,
+                            ),
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.network(
-                          "https://th.bing.com/th/id/R.8fc1d426aaaa5b6cd29b4857e9ff174c?rik=zAoChWxweP5B6Q&riu=http%3a%2f%2f1.bp.blogspot.com%2f--JijrjuTuQE%2fTh89y--UXHI%2fAAAAAAAAAjc%2fCVBzGgP1Dww%2fs1600%2fModern%2bOffice%2bInterior%2bDesign.jpg&ehk=Fn1BpWbg6%2bfFBg2tNTKy7o31SVKYhCqnfKKZ%2fdahSew%3d&risl=&pid=ImgRaw&r=0",
-                          width: mediaWidth / 4,
-                          fit: BoxFit.cover,
-                          height: 270,
-                        ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                right: 8.0, top: 8, bottom: 8, left: 8),
+                            child: Image.network(
+                              "https://mir-s3-cdn-cf.behance.net/project_modules/1400/8a065c61967137.5a8058c4288b9.jpg",
+                              width: mediaWidth / 4.2,
+                              fit: BoxFit.cover,
+                              height: 270,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                right: 8.0, top: 8, bottom: 8, left: 8),
+                            child: Image.network(
+                              "https://th.bing.com/th/id/R.98c7c36df7a2ad4c9d4285e24a5800f6?rik=LBD9vl8A3ClgRA&riu=http%3a%2f%2fwww.dwellingdecor.com%2fwp-content%2fuploads%2f2016%2f10%2fStudio-modern-Living-Room-Design.jpg&ehk=4kabq8UVk6X2i4HO3fIXisPImIgrmszeleNd9CLdv00%3d&risl=&pid=ImgRaw&r=0",
+                              width: mediaWidth / 4.2,
+                              fit: BoxFit.cover,
+                              height: 270,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.network(
-                          "https://mir-s3-cdn-cf.behance.net/project_modules/1400/8a065c61967137.5a8058c4288b9.jpg",
-                          width: mediaWidth / 4,
-                          fit: BoxFit.cover,
-                          height: 270,
-                        ),
+                  Positioned(
+                    left: mediaWidth * 0.5,
+                    top: 60,
+                    child: Container(
+                      width: mediaWidth / 2,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.8),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.network(
-                          "https://th.bing.com/th/id/R.98c7c36df7a2ad4c9d4285e24a5800f6?rik=LBD9vl8A3ClgRA&riu=http%3a%2f%2fwww.dwellingdecor.com%2fwp-content%2fuploads%2f2016%2f10%2fStudio-modern-Living-Room-Design.jpg&ehk=4kabq8UVk6X2i4HO3fIXisPImIgrmszeleNd9CLdv00%3d&risl=&pid=ImgRaw&r=0",
-                          width: mediaWidth / 4,
-                          fit: BoxFit.cover,
-                          height: 270,
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Text(
+                            "Our Projects",
+                            style: sideHeadlineStyle,
+                          ),
+                          // Text(mediaWidth.toStringAsFixed(5)),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          Center(
+                            child: Text(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus\n          venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim\n                 praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla",
+                              style: normalProjectTextStyle,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Center(
+                            child: FittedBox(
+                              child: Text(
+                                "magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo,\n                                                   vel fringilla est ullamcorper eget nulla",
+                                style: normalProjectTextStyle,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Center(
+                            child: InkWell(
+                              child: Container(
+                                width: 130,
+                                height: 48,
+                                color: const Color.fromARGB(255, 14, 0, 93),
+                                child: const Center(
+                                  child: Text(
+                                    "View All",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ],
           ),
-          Container(
-            width: mediaWidth / 2.2,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
-            ),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "Our Projects",
-                  style: sideHeadlineStyle,
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus\nvenenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent\nelementum facilisis leo, vel fringilla est ullamcorper eget nulla",
-                  style: normalTextStyle,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  " magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo,\nvel fringilla est ullamcorper eget nulla",
-                  style: normalTextStyle,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: InkWell(
-                    child: Container(
-                      width: 130,
-                      height: 48,
-                      color: const Color.fromARGB(255, 14, 0, 93),
-                      child: const Center(
-                        child: Text(
-                          "View All",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),

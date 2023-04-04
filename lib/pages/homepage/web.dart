@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 import '../../constants/style.dart';
@@ -197,85 +199,117 @@ class _HomepageWebBodyState extends State<HomepageWebBody> {
         Stack(
           children: [
             Positioned(
-              left: 400,
-              bottom: 100,
-              right: 0,
-              top: 0,
-              // child: Image.asset(
-              //   "assets/hall2.png",
-              //   fit: BoxFit.cover,
-              //   height: 900,
-              //   width: 1200,
-              // ),
-              child: Image.network(
-                "https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=iZ561ZIXOtPYGSzqlKUnLrliorreOYVz1pzu8WJmrnc=",
-                fit: BoxFit.cover,
+              child: Image.asset(
+                "assets/bluehome.png",
                 height: 900,
-                width: 1200,
               ),
             ),
-            Container(
-              width: widget.mediaWidth / 2.2,
-              decoration: BoxDecoration(color: Colors.white.withOpacity(0.5)),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 50,
+            Positioned(
+              left: 400,
+              // bottom: 100,
+              right: 10,
+              top: 30,
+              child: SizedBox(
+                height: 600,
+                width: 1200,
+                child: Image.asset(
+                  "assets/hall2.png",
+                  fit: BoxFit.cover,
+                  // height: 600,
+                  // height: widget.mediaHeight,
+                ),
+              ),
+              // child: Image.network(
+              //   "https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=iZ561ZIXOtPYGSzqlKUnLrliorreOYVz1pzu8WJmrnc=",
+              //   fit: BoxFit.cover,
+              //   height: widget.mediaHeight,
+              //   width: 1200,
+              // ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: Container(
+                width: widget.mediaWidth / 2.2,
+                height: widget.mediaHeight * 0.89,
+                decoration: BoxDecoration(color: Colors.white.withOpacity(0.5)),
+                child: FittedBox(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Make your dream interior in",
+                          style: sideHeadlineStyle,
+                        ),
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "3 easy steps",
+                          style: mainHeading,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Explore",
+                          style: sideHeadlineStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Explore more than just modular design\n              ideas with our experts.",
+                          style: normalTextStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Design",
+                          style: sideHeadlineStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Complete the designs with painting, flooring\n              and other decor solutions",
+                          style: normalTextStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Move-in",
+                          style: sideHeadlineStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      FittedBox(
+                        child: Text(
+                          "Move in with ease, with our hassle-free civil work\n              and installation services.",
+                          style: normalTextStyle,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Make your dream interior in",
-                    style: sideHeadlineStyle,
-                  ),
-                  Text(
-                    "3 easy steps",
-                    style: mainHeading,
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    "Explore",
-                    style: sideHeadlineStyle,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Explore more than just modular design\n              ideas with our experts.",
-                    style: normalTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    "Design",
-                    style: sideHeadlineStyle,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Complete the designs with painting, flooring\n              and other decor solutions",
-                    style: normalTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    "Move-in",
-                    style: sideHeadlineStyle,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Move in with ease, with our hassle-free civil work\n              and installation services.",
-                    style: normalTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                ],
+                ),
               ),
             ),
           ],

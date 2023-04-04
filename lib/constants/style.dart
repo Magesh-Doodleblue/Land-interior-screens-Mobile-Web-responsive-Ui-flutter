@@ -4,6 +4,11 @@ TextStyle subheadlineStyle = TextStyle(
   color: Colors.purple[900],
   fontSize: 20,
 );
+TextStyle subheadlineProjectStyle = TextStyle(
+  color: Colors.purple[900],
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+);
 TextStyle appbarHeadlineStyle = const TextStyle(
   color: Colors.black,
   fontSize: 20,
@@ -11,6 +16,10 @@ TextStyle appbarHeadlineStyle = const TextStyle(
 TextStyle normalTextStyle = const TextStyle(
   color: Colors.black,
   fontSize: 18,
+);
+TextStyle normalProjectTextStyle = const TextStyle(
+  color: Colors.black,
+  fontSize: 14,
 );
 TextStyle sideHeadlineStyle = const TextStyle(
   color: Color.fromARGB(255, 14, 0, 93),
