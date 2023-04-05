@@ -40,7 +40,7 @@ class RouterClass {
         path: "/blog",
         name: "blog",
         pageBuilder: (context, state) {
-          return const MaterialPage(
+          return MaterialPage(
             child: BlogPage(),
           );
         },

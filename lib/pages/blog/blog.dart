@@ -1,21 +1,127 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../constants/mobile_styles.dart';
 import 'mobile.dart';
 import 'web.dart';
 
-class BlogPage extends StatelessWidget {
-  const BlogPage({super.key});
-  static var mediaWidth;
-  static var mediaHeight;
+class BlogPage extends StatefulWidget {
+  BlogPage({super.key});
+  var mediaWidth;
+  var mediaHeight;
+
+  @override
+  State<BlogPage> createState() => _BlogPageState();
+}
+
+class _BlogPageState extends State<BlogPage> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool isDrawerOpen = false;
+
+  void _toggleDrawer() {
+    setState(() {
+      isDrawerOpen = !isDrawerOpen;
+    });
+    if (isDrawerOpen) {
+      scaffoldKey.currentState!.openDrawer();
+    } else {
+      scaffoldKey.currentState!.openEndDrawer();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    mediaWidth = MediaQuery.of(context).size.width;
-    mediaHeight = MediaQuery.of(context).size.height;
+    var mediaWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      key: scaffoldKey,
+      endDrawer: mediaWidth < 750
+          ? Drawer(
+              width: mediaWidth / 1.6,
+              backgroundColor: Colors.white.withOpacity(0.88),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  SizedBox(
+                    height: 75,
+                    child: DrawerHeader(
+                      duration: const Duration(seconds: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.88),
+                      ),
+                      child: Text(
+                        'Menu',
+                        style: mainHeadingMobile,
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    title: const Text('About'),
+                    onTap: () {
+                      GoRouter.of(context).pushNamed("about");
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Project'),
+                    onTap: () {
+                      GoRouter.of(context).pushNamed("project");
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Studio'),
+                    onTap: () {
+                      GoRouter.of(context).pushNamed("studio");
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Blog'),
+                    onTap: () {
+                      GoRouter.of(context).pushNamed("blog");
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Contact'),
+                    onTap: () {
+                      GoRouter.of(context).pushNamed("Contact");
+                    },
+                  ),
+                ],
+              ),
+            )
+          : Container(),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            mediaWidth < 750
+                ? Row(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Image.asset(
+                          "assets/logo.png",
+                          width: 60,
+                        ),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: _toggleDrawer,
+                        icon: const Icon(
+                          Icons.menu,
+                          size: 30,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                    ],
+                  )
+                : Container(),
+            const SizedBox(
+              height: 20,
+            ),
             if (mediaWidth > 740) const BlogWebLayout(),
             if (mediaWidth < 740) const BlogMobileLayout(),
           ],

@@ -82,9 +82,11 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(
-            height: 30,
-          ),
+          mediaWidth > 750
+              ? const SizedBox(
+                  height: 30,
+                )
+              : const SizedBox(),
           mediaWidth > 750 ? topRowWeb() : Container(),
           mediaWidth > 750 ? appbarIconWidget() : Container(),
           const SizedBox(
@@ -113,7 +115,7 @@ class _HomepageState extends State<Homepage> {
               : Container(),
 
           blog
-              ? const Expanded(
+              ? Expanded(
                   child: BlogPage(),
                 )
               : Container(),

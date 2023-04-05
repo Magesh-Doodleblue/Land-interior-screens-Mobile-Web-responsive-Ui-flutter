@@ -37,58 +37,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: Drawer(
-        width: widget.mediaWidth / 1.6,
-        backgroundColor: Colors.white.withOpacity(0.88),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            SizedBox(
-              height: 75,
-              child: DrawerHeader(
-                duration: const Duration(seconds: 2),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.88),
-                ),
-                child: Text(
-                  'Menu',
-                  style: mainHeadingMobile,
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text('About'),
-              onTap: () {
-                GoRouter.of(context).pushNamed("about");
-              },
-            ),
-            ListTile(
-              title: const Text('Project'),
-              onTap: () {
-                GoRouter.of(context).pushNamed("project");
-              },
-            ),
-            ListTile(
-              title: const Text('Studio'),
-              onTap: () {
-                GoRouter.of(context).pushNamed("studio");
-              },
-            ),
-            ListTile(
-              title: const Text('Blog'),
-              onTap: () {
-                GoRouter.of(context).pushNamed("blog");
-              },
-            ),
-            ListTile(
-              title: const Text('Contact'),
-              onTap: () {
-                GoRouter.of(context).pushNamed("Contact");
-              },
-            ),
-          ],
-        ),
-      ),
+      endDrawer: drawerMethod(context),
       body: ListView(
         //main page Listview
         children: [
@@ -331,6 +280,61 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                 ),
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Drawer drawerMethod(BuildContext context) {
+    return Drawer(
+      width: widget.mediaWidth / 1.6,
+      backgroundColor: Colors.white.withOpacity(0.88),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          SizedBox(
+            height: 75,
+            child: DrawerHeader(
+              duration: const Duration(seconds: 2),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.88),
+              ),
+              child: Text(
+                'Menu',
+                style: mainHeadingMobile,
+              ),
+            ),
+          ),
+          ListTile(
+            title: const Text('About'),
+            onTap: () {
+              GoRouter.of(context).pushNamed("about");
+            },
+          ),
+          ListTile(
+            title: const Text('Project'),
+            onTap: () {
+              GoRouter.of(context).pushNamed("project");
+            },
+          ),
+          ListTile(
+            title: const Text('Studio'),
+            onTap: () {
+              GoRouter.of(context).pushNamed("studio");
+            },
+          ),
+          ListTile(
+            title: const Text('Blog'),
+            onTap: () {
+              GoRouter.of(context).pushNamed("blog");
+            },
+          ),
+          ListTile(
+            title: const Text('Contact'),
+            onTap: () {
+              GoRouter.of(context).pushNamed("Contact");
+            },
           ),
         ],
       ),
