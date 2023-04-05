@@ -1,7 +1,7 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, deprecated_member_use, use_build_context_synchronously
 
-import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants/mobile_styles.dart';
 
@@ -142,30 +142,14 @@ class aboutMobileLayout extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
-            child: Image.asset("logo.png"),
+            child: Image.asset("assets/logo.png"),
           ),
           const SizedBox(
             height: 30,
           ),
           GestureDetector(
             onTap: () async {
-              // await LaunchApp.openApp(
-              //   androidPackageName: 'net.pulsesecure.pulsesecure',
-              //   iosUrlScheme: 'pulsesecure://',
-              //   appStoreLink:
-              //       'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
-              //   // openStore: false
-              // );
-              await LaunchApp.openApp(
-                androidPackageName: 'com.google.android.gm',
-                iosUrlScheme: 'googlegmail://',
-                appStoreLink:
-                    'itms-apps://itunes.apple.com/us/app/gmail-email-by-google/id422689480',
-              );
-
-              // Enter the package name of the App you want to open and for iOS add the URLscheme to the Info.plist file.
-              // The `openStore` argument decides whether the app redirects to PlayStore or AppStore.
-              // For testing purpose you can enter com.instagram.android
+              openNewMailCompose(context);
             },
             child: const Text(
               "landinteriors@gmail.com\n        +91 98987 65656",
@@ -217,5 +201,50 @@ class aboutMobileLayout extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  // Future launchEmailCompose() async {
+  //   const url = 'mailto:landinteriors@gmail.com?subject=Hi&body=Sample';
+
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //   }
+  // }
+
+  void openNewMailCompose(BuildContext context) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'https',
+      host: 'mail.google.com',
+      path: '/mail/u/0/compose',
+      queryParameters: {
+        'compose': 'new',
+        'subject': 'Hi',
+        'body': 'Sample',
+      },
+    );
+
+    final String encodedUri = Uri.encodeFull(emailLaunchUri.toString());
+
+    if (await canLaunch(encodedUri)) {
+      await launch(encodedUri);
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('No email app found'),
+            content: const Text('Please install an email app to send an email'),
+            actions: [
+              TextButton(
+                child: const Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 }
