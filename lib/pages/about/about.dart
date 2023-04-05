@@ -93,6 +93,11 @@ class _AboutState extends State<About> {
       body: Center(
         child: ListView(
           children: [
+            mediaWidth < 450
+                ? const SizedBox(
+                    height: 30,
+                  )
+                : const SizedBox(),
             if (mediaWidth > 750)
               aboutWebLayout(
                 mediaHeight: mediaHeight,
@@ -101,6 +106,9 @@ class _AboutState extends State<About> {
             mediaWidth < 750
                 ? Row(
                     children: [
+                      SizedBox(
+                        width: mediaWidth < 450 ? 20 : 5,
+                      ),
                       Align(
                         alignment: Alignment.topLeft,
                         child: Image.asset(

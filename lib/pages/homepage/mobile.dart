@@ -43,6 +43,9 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
         children: [
           Row(
             children: [
+              SizedBox(
+                width: widget.mediaWidth < 450 ? 20 : 5,
+              ),
               Align(
                 alignment: Alignment.topLeft,
                 child: Image.asset(

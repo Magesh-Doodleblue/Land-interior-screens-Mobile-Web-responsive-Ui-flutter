@@ -45,20 +45,6 @@ class RouterClass {
           );
         },
       ),
-      // GoRoute(
-      //   path: "/blog",
-      //   name: "blog",
-      //   pageBuilder: (context, state) {
-      //     return const MaterialPage(child: Homepage());
-      //   },
-      // ),
-      // GoRoute(
-      //   path: "/contact",
-      //   name: "contact",
-      //   pageBuilder: (context, state) {
-      //     return const MaterialPage(child: Homepage());
-      //   },
-      // ),
     ],
   );
 }

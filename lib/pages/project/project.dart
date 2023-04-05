@@ -99,6 +99,9 @@ class _ProjectState extends State<Project> {
           mediaWidth < 750
               ? Row(
                   children: [
+                    SizedBox(
+                      width: mediaWidth < 450 ? 20 : 5,
+                    ),
                     Align(
                       alignment: Alignment.topLeft,
                       child: Image.asset(

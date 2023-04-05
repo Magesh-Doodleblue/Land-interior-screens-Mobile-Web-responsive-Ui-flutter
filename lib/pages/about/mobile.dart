@@ -22,7 +22,7 @@ class aboutMobileLayout extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 20,
+            height: 40,
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -38,11 +38,14 @@ class aboutMobileLayout extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text(
-            textAlign: TextAlign.center,
-            "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
-            style: TextStyle(
-              fontSize: 14,
+          const Padding(
+            padding: EdgeInsets.all(13),
+            child: Text(
+              textAlign: TextAlign.center,
+              "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
+              style: TextStyle(
+                fontSize: 14,
+              ),
             ),
           ),
           const SizedBox(
@@ -72,46 +75,51 @@ class aboutMobileLayout extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 50,
           ),
           Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const Text(
-                  textAlign: TextAlign.left,
+                  // textAlign: TextAlign.left,
                   "Let talk about your Dream home",
                   style: TextStyle(
                       fontSize: 18,
                       color: Color.fromARGB(255, 14, 0, 93),
                       fontWeight: FontWeight.w600),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: mediaWidth * 0.85,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: "Name",
-                        hintStyle: TextStyle(),
-                        border: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(width: BorderSide.strokeAlignCenter),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: mediaWidth * 0.85,
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          hintText: "Name",
+                          hintStyle: TextStyle(),
+                          border: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: BorderSide.strokeAlignCenter),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: mediaWidth * 0.85,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: "Phone / Email",
-                        hintStyle: TextStyle(),
-                        border: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(width: BorderSide.strokeAlignCenter),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: mediaWidth * 0.85,
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          hintText: "Phone / Email",
+                          hintStyle: TextStyle(),
+                          border: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: BorderSide.strokeAlignCenter),
+                          ),
                         ),
                       ),
                     ),
@@ -216,11 +224,11 @@ class aboutMobileLayout extends StatelessWidget {
       scheme: 'https',
       host: 'mail.google.com',
       path: '/mail/u/0/compose',
-      queryParameters: {
-        'compose': 'new',
-        'subject': 'Hi',
-        'body': 'Sample',
-      },
+      // queryParameters: {
+      //   'compose': 'new',
+      //   'subject': 'Hi',
+      //   'body': 'Sample',
+      // },
     );
 
     final String encodedUri = Uri.encodeFull(emailLaunchUri.toString());
