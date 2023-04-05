@@ -37,7 +37,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      endDrawer: drawerMethod(context),
+      endDrawer: drawerMethod(context, widget.mediaWidth),
       body: ListView(
         //main page Listview
         children: [
@@ -286,15 +286,15 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
     );
   }
 
-  Drawer drawerMethod(BuildContext context) {
+  Drawer drawerMethod(BuildContext context, double width) {
     return Drawer(
-      width: widget.mediaWidth / 1.6,
+      width: width / 1.6,
       backgroundColor: Colors.white.withOpacity(0.88),
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: 75,
+            height: 110,
             child: DrawerHeader(
               duration: const Duration(seconds: 2),
               decoration: BoxDecoration(
@@ -309,7 +309,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
           ListTile(
             title: const Text('About'),
             onTap: () {
-              GoRouter.of(context).pushNamed("about");
+              GoRouter.of(context).pushNamed("homepage");
             },
           ),
           ListTile(
@@ -333,7 +333,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
           ListTile(
             title: const Text('Contact'),
             onTap: () {
-              GoRouter.of(context).pushNamed("Contact");
+              GoRouter.of(context).pushNamed("about");
             },
           ),
         ],

@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 
+import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/mobile_styles.dart';
@@ -70,71 +71,6 @@ class aboutMobileLayout extends StatelessWidget {
               ),
             ],
           ),
-          // Stack(
-          //   children: [
-          //     Image.asset(
-          //       "assets/mobile_about.png",
-          //       width: mediaWidth * 0.80,
-          //       height: mediaHeight / 1.4,
-          //     ),
-          //     Positioned(
-          //       left: mediaWidth * 0.04,
-          //       top: 130,
-          //       child: SizedBox(
-          //         width: mediaWidth / 1.75,
-          //         child: Card(
-          //           color: Colors.white.withOpacity(0.99),
-          //           elevation: 30,
-          //           child: Column(
-          //             mainAxisAlignment: MainAxisAlignment.center,
-          //             children: const [
-          //               SizedBox(
-          //                 height: 60,
-          //               ),
-          //               Text(
-          //                 "Lorem ipsum dolor sit amet, consectetur adipiscing\nelit ut aliquam, purus sit amet luctus venenatis, lectus\nmagna fringilla urna, porttitor",
-          //                 style: TextStyle(fontSize: 10),
-          //               ),
-          //               SizedBox(
-          //                 height: 30,
-          //               ),
-          //               Text(
-          //                 "-Jeo Stanlee",
-          //                 style: TextStyle(
-          //                   color: Colors.black,
-          //                   fontSize: 18,
-          //                   fontWeight: FontWeight.w600,
-          //                 ),
-          //               ),
-          //               SizedBox(
-          //                 height: 30,
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //     Positioned(
-          //       // top: mediaHeight * 0.14,
-          //       left: 100,
-          //       child: Image.asset(
-          //         "assets/person.png",
-          //         width: mediaWidth / 3.1,
-          //         // height: 78,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          const SizedBox(
-            height: 20,
-          ),
-          // const Align(
-          //   alignment: Alignment.centerLeft,
-          //   child: Padding(
-          //     padding: EdgeInsets.only(left: 78.0),
-          //     child:
-          //   ),
-          // ),
           const SizedBox(
             height: 30,
           ),
@@ -211,8 +147,29 @@ class aboutMobileLayout extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text(
-            "landinteriors@gmail.com\n        +91 98987 65656",
+          GestureDetector(
+            onTap: () async {
+              // await LaunchApp.openApp(
+              //   androidPackageName: 'net.pulsesecure.pulsesecure',
+              //   iosUrlScheme: 'pulsesecure://',
+              //   appStoreLink:
+              //       'itms-apps://itunes.apple.com/us/app/pulse-secure/id945832041',
+              //   // openStore: false
+              // );
+              await LaunchApp.openApp(
+                androidPackageName: 'com.google.android.gm',
+                iosUrlScheme: 'googlegmail://',
+                appStoreLink:
+                    'itms-apps://itunes.apple.com/us/app/gmail-email-by-google/id422689480',
+              );
+
+              // Enter the package name of the App you want to open and for iOS add the URLscheme to the Info.plist file.
+              // The `openStore` argument decides whether the app redirects to PlayStore or AppStore.
+              // For testing purpose you can enter com.instagram.android
+            },
+            child: const Text(
+              "landinteriors@gmail.com\n        +91 98987 65656",
+            ),
           ),
           const SizedBox(
             height: 20,

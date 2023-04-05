@@ -15,19 +15,6 @@ class BlogMobileLayout extends StatefulWidget {
 class _BlogMobileLayoutState extends State<BlogMobileLayout> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  bool isDrawerOpen = false;
-
-  void _toggleDrawer() {
-    setState(() {
-      isDrawerOpen = !isDrawerOpen;
-    });
-    if (isDrawerOpen) {
-      scaffoldKey.currentState!.openDrawer();
-    } else {
-      scaffoldKey.currentState!.openEndDrawer();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(

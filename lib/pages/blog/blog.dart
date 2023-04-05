@@ -46,7 +46,7 @@ class _BlogPageState extends State<BlogPage> {
                 padding: EdgeInsets.zero,
                 children: [
                   SizedBox(
-                    height: 75,
+                    height: 110,
                     child: DrawerHeader(
                       duration: const Duration(seconds: 2),
                       decoration: BoxDecoration(
@@ -61,7 +61,7 @@ class _BlogPageState extends State<BlogPage> {
                   ListTile(
                     title: const Text('About'),
                     onTap: () {
-                      GoRouter.of(context).pushNamed("about");
+                      GoRouter.of(context).pushNamed("homepage");
                     },
                   ),
                   ListTile(
@@ -85,7 +85,7 @@ class _BlogPageState extends State<BlogPage> {
                   ListTile(
                     title: const Text('Contact'),
                     onTap: () {
-                      GoRouter.of(context).pushNamed("Contact");
+                      GoRouter.of(context).pushNamed("about");
                     },
                   ),
                 ],
@@ -95,6 +95,11 @@ class _BlogPageState extends State<BlogPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            mediaWidth < 450
+                ? const SizedBox(
+                    height: 50,
+                  )
+                : const SizedBox(),
             mediaWidth < 750
                 ? Row(
                     children: [

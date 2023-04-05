@@ -45,7 +45,7 @@ class _ProjectState extends State<Project> {
                 padding: EdgeInsets.zero,
                 children: [
                   SizedBox(
-                    height: 75,
+                    height: 110,
                     child: DrawerHeader(
                       duration: const Duration(seconds: 2),
                       decoration: BoxDecoration(
@@ -60,7 +60,7 @@ class _ProjectState extends State<Project> {
                   ListTile(
                     title: const Text('About'),
                     onTap: () {
-                      GoRouter.of(context).pushNamed("about");
+                      GoRouter.of(context).pushNamed("homepage");
                     },
                   ),
                   ListTile(
@@ -84,7 +84,7 @@ class _ProjectState extends State<Project> {
                   ListTile(
                     title: const Text('Contact'),
                     onTap: () {
-                      GoRouter.of(context).pushNamed("Contact");
+                      GoRouter.of(context).pushNamed("about");
                     },
                   ),
                 ],

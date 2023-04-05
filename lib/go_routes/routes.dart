@@ -11,7 +11,7 @@ class RouterClass {
     routes: [
       GoRoute(
         path: "/",
-        name: "Homepage",
+        name: "homepage",
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: Homepage(),
