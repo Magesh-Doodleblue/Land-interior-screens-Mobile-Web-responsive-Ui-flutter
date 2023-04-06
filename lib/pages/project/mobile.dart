@@ -141,12 +141,15 @@ class mobileOurProjectsLayout extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 40),
               child: Text(
                 "Our Projects",
                 style: sideHeadlineStyleMobile,
               ),
             ),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Wrap(
             children: [

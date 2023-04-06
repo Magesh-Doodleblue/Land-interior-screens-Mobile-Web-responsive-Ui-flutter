@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -27,9 +29,11 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
       isDrawerOpen = !isDrawerOpen;
     });
     if (isDrawerOpen) {
-      scaffoldKey.currentState!.openDrawer();
-    } else {
       scaffoldKey.currentState!.openEndDrawer();
+      setState(() {
+        isDrawerOpen = !isDrawerOpen;
+      });
+      // scaffoldKey.currentState!.openDrawer();
     }
   }
 
@@ -54,9 +58,9 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                 ),
               ),
               const Spacer(),
-              IconButton(
-                onPressed: _toggleDrawer,
-                icon: const Icon(
+              GestureDetector(
+                onTap: _toggleDrawer,
+                child: const Icon(
                   Icons.menu,
                   size: 30,
                 ),
@@ -89,13 +93,17 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                   // ),
                   Positioned(
                     top: 160,
-                    left: widget.mediaWidth / 9,
+                    left: widget.mediaWidth * 0.05,
+                    right: widget.mediaWidth * 0.05,
                     child: Container(
-                      height: widget.mediaHeight * 0.45,
-                      width: widget.mediaWidth * 0.80,
+                      height: widget.mediaHeight * 0.49,
+                      width: widget.mediaWidth * 0.86,
                       color: Colors.white.withOpacity(0.78),
                       child: Column(
                         children: [
+                          const SizedBox(
+                            height: 25,
+                          ),
                           const FittedBox(
                               child: Text("Get personalised home interiors")),
                           FittedBox(
@@ -104,16 +112,20 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                               style: mainMobileHeading,
                             ),
                           ),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Container(
                             width: widget.mediaWidth / 1.4,
-                            height: widget.mediaHeight / 9.0,
+                            height: widget.mediaHeight * 0.06,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 2, 0, 38),
+                              // color: Color.fromARGB(255, 2, 0, 38),
+                              color: Color(0xFF4B2A63),
                             ),
                             child: Center(
                               child: FittedBox(
                                 child: Text(
-                                  "SPEAK WITH A ONLINE CONSULTANT",
+                                  "   SPEAK WITH A ONLINE CONSULTANT   ",
                                   style: blueContainerTextMobile,
                                 ),
                               ),
@@ -128,7 +140,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
             ],
           ),
           const SizedBox(
-            height: 70,
+            height: 40,
           ),
           Center(
             //main Listview child
@@ -138,7 +150,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
             ),
           ),
           const SizedBox(
-            height: 70,
+            height: 40,
           ),
           Row(
             //main Listview child
@@ -151,7 +163,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                 children: [
                   Image.asset(
                     "assets/calendar.png",
-                    width: 36,
+                    width: 28,
                   ),
                   const SizedBox(
                     height: 8,
@@ -164,7 +176,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                 children: [
                   Image.asset(
                     "assets/smilyhome.png",
-                    width: 36,
+                    width: 28,
                   ),
                   const SizedBox(
                     height: 8,
@@ -177,7 +189,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
                 children: [
                   Image.asset(
                     "assets/certificate.png",
-                    width: 36,
+                    width: 28,
                   ),
                   const SizedBox(
                     height: 8,
@@ -198,98 +210,135 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
               Image.asset(
                 "assets/hall2.png",
                 fit: BoxFit.cover,
-                height: 600,
+                height: widget.mediaHeight * 0.58,
                 width: widget.mediaWidth,
               ),
               Container(
                 width: widget.mediaWidth / 1.6,
-                height: 600,
-                decoration: BoxDecoration(color: Colors.white.withOpacity(0.4)),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Make your dream interior in",
-                        style: sideHeadlineStyleMobile,
+                // height: 600,
+                decoration: BoxDecoration(color: Colors.white.withOpacity(0.6)),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 28,
+                    right: 10,
+                    top: 25,
+                    bottom: 25,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "3 easy steps",
-                        style: mainHeadingMobile,
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Make your dream interior in",
+                            style: sideHeadlineStyleMobile,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Explore",
-                        style: sideHeadlineStyleMobile,
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "3 easy steps",
+                            style: mainHeadingMobile,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Explore more than just modular design\n              ideas with our experts.",
-                        style: normalTextStyle,
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Design",
-                        style: sideHeadlineStyleMobile,
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Explore",
+                            style: sideHeadlineStyleMobile,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Complete the designs with painting, flooring\n              and other decor solutions",
-                        style: normalTextStyle,
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Move-in",
-                        style: sideHeadlineStyleMobile,
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Explore more than just modular design\nideas with our experts.",
+                            style: normalTextStyle,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "Move in with ease, with our hassle-free civil work\n              and installation services.",
-                        style: normalTextStyle,
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Design",
+                            style: sideHeadlineStyleMobile,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Complete the designs with painting, flooring\nand other decor solutions",
+                            style: normalTextStyle,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Move-in",
+                            style: sideHeadlineStyleMobile,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      FittedBox(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Move in with ease, with our hassle-free civil work\nand installation services.",
+                            style: normalTextStyle,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),
     );
   }
 
-  Drawer drawerMethod(BuildContext context, double width) {
+  drawerMethod(BuildContext context, double width) {
     return Drawer(
       width: width / 1.6,
       backgroundColor: Colors.white.withOpacity(0.88),

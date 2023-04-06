@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/mobile_styles.dart';
-import '../../constants/style.dart';
 
 class BlogMobileLayout extends StatefulWidget {
   const BlogMobileLayout({
@@ -20,17 +19,17 @@ class _BlogMobileLayoutState extends State<BlogMobileLayout> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 14, left: 14),
+          padding: const EdgeInsets.only(top: 14, left: 23),
           child: Align(
             alignment: Alignment.topLeft,
             child: Text(
               "Blogs",
-              style: sideHeadlineStyle,
+              style: sideHeadlineStyleMobile,
             ),
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 10,
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -48,7 +47,7 @@ class _BlogMobileLayoutState extends State<BlogMobileLayout> {
                     height: 10,
                   ),
                   Text(
-                    "Modern Interior",
+                    "Modular Kitchen",
                     style: blogSideHeadingStyleMobile,
                   ),
                   const Padding(

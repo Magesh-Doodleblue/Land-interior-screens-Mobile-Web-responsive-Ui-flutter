@@ -15,7 +15,7 @@ TextStyle appbarHeadlineStyle = const TextStyle(
 );
 TextStyle normalTextStyle = const TextStyle(
   color: Colors.black,
-  fontSize: 18,
+  fontSize: 20,
 );
 TextStyle normalProjectTextStyle = const TextStyle(
   color: Colors.black,

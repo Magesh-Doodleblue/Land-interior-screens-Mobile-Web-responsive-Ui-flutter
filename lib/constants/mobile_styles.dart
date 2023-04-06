@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 TextStyle mobileHeading = const TextStyle(
-  color: Color.fromARGB(255, 14, 0, 93),
+  color: Color(0xFF241330),
   fontSize: 22,
 );
 
 TextStyle mainMobileHeading = const TextStyle(
-  color: Color.fromARGB(255, 14, 0, 93),
-  fontSize: 28,
+  color: Color(0xFF241330),
+  fontSize: 26,
   fontWeight: FontWeight.w600,
 );
 
@@ -18,13 +18,13 @@ TextStyle blueContainerTextMobile = const TextStyle(
 );
 
 TextStyle sideHeadlineStyleMobile = const TextStyle(
-  color: Color.fromARGB(255, 14, 0, 93),
+  color: Color(0xFF241330),
   fontSize: 22,
   fontWeight: FontWeight.w500,
 );
 
 TextStyle mainHeadingMobile = const TextStyle(
-  color: Color.fromARGB(255, 14, 0, 93),
+  color: Color(0xFF241330),
   fontSize: 25,
   fontWeight: FontWeight.w600,
 );
@@ -36,7 +36,7 @@ TextStyle blogSideHeadingStyleMobile = const TextStyle(
 );
 
 TextStyle projectSideHeadingStyleMobile = const TextStyle(
-  color: Color.fromARGB(255, 14, 0, 93),
+  color: Color(0xFF241330),
   fontSize: 16,
   fontWeight: FontWeight.w500,
 );

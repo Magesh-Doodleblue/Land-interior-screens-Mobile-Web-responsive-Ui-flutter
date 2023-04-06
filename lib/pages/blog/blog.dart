@@ -26,9 +26,11 @@ class _BlogPageState extends State<BlogPage> {
       isDrawerOpen = !isDrawerOpen;
     });
     if (isDrawerOpen) {
-      scaffoldKey.currentState!.openDrawer();
-    } else {
       scaffoldKey.currentState!.openEndDrawer();
+      setState(() {
+        isDrawerOpen = !isDrawerOpen;
+      });
+      // scaffoldKey.currentState!.openDrawer();
     }
   }
 

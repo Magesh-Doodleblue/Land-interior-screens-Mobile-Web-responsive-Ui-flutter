@@ -24,9 +24,11 @@ class _AboutState extends State<About> {
       isDrawerOpen = !isDrawerOpen;
     });
     if (isDrawerOpen) {
-      scaffoldKey.currentState!.openDrawer();
-    } else {
       scaffoldKey.currentState!.openEndDrawer();
+      setState(() {
+        isDrawerOpen = !isDrawerOpen;
+      });
+      // scaffoldKey.currentState!.openDrawer();
     }
   }
 
