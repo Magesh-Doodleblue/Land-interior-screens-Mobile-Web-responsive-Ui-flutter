@@ -210,7 +210,7 @@ class _HomepageMobileBodyState extends State<HomepageMobileBody> {
               Image.asset(
                 "assets/hall2.png",
                 fit: BoxFit.cover,
-                height: widget.mediaHeight * 0.58,
+                height: widget.mediaHeight * 0.64,
                 width: widget.mediaWidth,
               ),
               Container(

@@ -20,7 +20,7 @@ TextStyle blueContainerTextMobile = const TextStyle(
 TextStyle sideHeadlineStyleMobile = const TextStyle(
   color: Color(0xFF241330),
   fontSize: 22,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
 );
 
 TextStyle mainHeadingMobile = const TextStyle(
