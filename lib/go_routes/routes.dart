@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:web_mobile_responsive_app/pages/homepage/homepage.dart';
 
-import '../pages/about/about.dart';
-import '../pages/blog/blog.dart';
-import '../pages/project/project.dart';
+import '../pages/about/main_about.dart';
+import '../pages/blog/main_blog.dart';
+import '../pages/project/main_project.dart';
 
 class RouterClass {
   GoRouter routes = GoRouter(
@@ -23,7 +23,7 @@ class RouterClass {
         name: "about",
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: About(),
+            child: AboutMainPage(),
           );
         },
       ),
@@ -32,7 +32,10 @@ class RouterClass {
         name: "project",
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: Project(),
+            // child: Project(
+            //   isHomeToProject: false,
+            // ),
+            child: ProjectPage(),
           );
         },
       ),
@@ -40,8 +43,11 @@ class RouterClass {
         path: "/blog",
         name: "blog",
         pageBuilder: (context, state) {
-          return MaterialPage(
-            child: BlogPage(),
+          return const MaterialPage(
+            // child: BlogPage(
+            //   isHomeToBlog: false,
+            // ),
+            child: BlogMainPage(),
           );
         },
       ),

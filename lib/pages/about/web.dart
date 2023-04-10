@@ -31,15 +31,15 @@ class aboutWebLayout extends StatelessWidget {
             height: 30,
           ),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            padding: EdgeInsets.symmetric(horizontal: 46.0),
             child: Text(
               textAlign: TextAlign.justify,
-              "  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim",
             ),
           ),
-          // const SizedBox(
-          //   height: 40,
-          // ),
+          SizedBox(
+            height: mediaWidth > 750 ? 30 : 1,
+          ),
           Image.asset(
             "assets/aboutweb.png",
             width: mediaWidth * 0.78,

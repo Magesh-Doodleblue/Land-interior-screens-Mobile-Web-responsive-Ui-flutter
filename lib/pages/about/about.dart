@@ -8,7 +8,9 @@ import 'mobile.dart';
 import 'web.dart';
 
 class About extends StatefulWidget {
-  const About({super.key});
+  const About({
+    super.key,
+  });
 
   @override
   State<About> createState() => _AboutState();

@@ -9,7 +9,9 @@ import '../../constants/style.dart';
 import 'mobile.dart';
 
 class Project extends StatefulWidget {
-  const Project({super.key});
+  const Project({
+    super.key,
+  });
 
   @override
   State<Project> createState() => _ProjectState();
@@ -95,6 +97,16 @@ class _ProjectState extends State<Project> {
           : Container(),
       body: ListView(
         children: [
+          // widget.isHomeToProject
+          //     ? Container()
+          //     : mediaWidth > 750
+          //         ? topRowWeb()
+          //         : Container(),
+          // widget.isHomeToProject
+          //     ? Container()
+          //     : mediaWidth > 750
+          //         ? appbarIconWidget()
+          //         : Container(),
           SizedBox(
             height: mediaWidth > 750 ? 50 : 10,
           ),
